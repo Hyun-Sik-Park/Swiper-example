@@ -1,0 +1,46 @@
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	width: 100%;
+
+	&-inner { //& -> 상위 요소 것을 가져옴, 부모 선택자(중요!)
+		display: flex;
+		align-items: center;
+		height: 100px;
+	}
+
+	&.light {
+		color: #fff;
+	}
+
+	&.dark {
+		color: #000;
+	}
+}
+
+.container {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 100%;
+}
+
+.swiper-slide {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	height: 100vh;
+}
+
+[data-header-type="light"] {	// selector로 data를 가져올때는 []를 써줘야함
+	color: #fff;
+	background-color: #000;
+}
+
+
+[data-header-type="dark"] {	// selector로 data를 가져올때는 []를 써줘야함
+	color: #000;
+	background-color: #f1f1f1;
+}
