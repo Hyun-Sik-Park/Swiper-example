@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>슬라이더 03 - 탭 안에 슬라이더</title>
+
+	<script
+	src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"></script>
+
+	<!-- vendor -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+	<!-- css -->
+	<!-- css불러오는 순서도 중요! reset부터 먼저 가져와야함 -->
+	<link rel="stylesheet" href="./assets/css/reset.min.css">
+	<link rel="stylesheet" href="./assets/css/swiper-03.min.css">
+</head>
+<body>
+	<div id="wrap-03">
+
+		<header id="header">
+			<div class="container">
+				<div id="header-inner">
+					<h1 class="tit">슬라이더 03 - 탭 안에 슬라이더</h1>
+				</div>
+			</div>
+		</header>
+
+		<main id="main">
+			<div class="container">
+				<ul class="tabmenu">
+					<li class="tab01">메뉴1</li>
+					<li class="tab02">메뉴2</li>
+					<li class="tab03">메뉴3</li>
+				</ul>
+
+				<div class="tab01-slide">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">slider 01</div>
+							<div class="swiper-slide">slider 02</div>
+							<div class="swiper-slide">slider 03</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab02-slide">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">slider 04</div>
+							<div class="swiper-slide">slider 05</div>
+							<div class="swiper-slide">slider 06</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab03-slide">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">slider 07</div>
+							<div class="swiper-slide">slider 08</div>
+							<div class="swiper-slide">slider 09</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			$tab01 = $('.tabmenu .tab01');
+			$tab02 = $('.tabmenu .tab02');
+			$tab03 = $('.tabmenu .tab03');
+
+			$slide01 = $('.tab01-slide');
+			$slide02 = $('.tab02-slide');
+			$slide03 = $('.tab03-slide');
+
+			$slide01.hide();
+			$slide02.hide();
+			$slide03.hide();
+
+			$tab01.on('click', function(e){
+				e.preventDefault();
+				$slide01.show();
+				$slide02.hide();
+				$slide03.hide();
+
+				const mainSlider = new Swiper('.tab01-slide .swiper-container', {
+					slidesPerView: 1
+
+				});
+
+			});
+
+			$tab02.on('click', function(e){
+				e.preventDefault();
+				$slide01.hide();
+				$slide02.show();
+				$slide03.hide();
+
+				const mainSlider = new Swiper('.tab02-slide .swiper-container', {
+					slidesPerView: 1
+
+				});
+
+			});
+
+			$tab03.on('click', function(e){
+				e.preventDefault();
+				$slide01.hide();
+				$slide02.hide();
+				$slide03.show();
+
+				const mainSlider = new Swiper('.tab03-slide .swiper-container', {
+					slidesPerView: 1
+
+				});
+
+			});
+		})
+	</script>
+</body>
+</html>

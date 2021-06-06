@@ -1,0 +1,49 @@
+#wrap-03 {
+
+	#main {
+
+		.tabmenu {
+			display: flex;
+			list-style: none;
+
+			li {
+				cursor: pointer;
+				padding: 5px 15px;
+				margin-right: 10px;
+				transition: all 0.25s ease;
+			}
+
+			li:hover {
+				background-color: #989898;
+				color: #fff;
+				border-radius: 10px;
+			}
+		}
+
+		.tab01-slide {
+
+			.swiper-slide {
+				background-color: #f1f1f1;
+				height: auto;
+			}
+		}
+
+		.tab02-slide {
+
+			.swiper-slide {
+				background-color: #989898;
+				height: auto;
+			}
+		}
+
+		.tab03-slide {
+
+			.swiper-slide {
+				background-color: #000;
+				color: #fff;
+				height: auto;
+			}
+		}
+
+	}
+}
